@@ -1,0 +1,115 @@
+/* Стили блока Hero */
+.hero {
+  background: linear-gradient(0deg, #ffffff 0%, #dae0f8 100%);
+  display: flex;
+  justify-content: space-between;
+  padding: 60px 80px
+}
+/* стили для контейнера для пояснения назначения сайта */
+.heroBadge {
+  display: flex;
+  align-items: center;
+  margin-left: 14px;
+  border: 1px solid #b3b1b1;
+  background-color: #fcfafb;
+  border-radius: 20px;
+  width: 269px;
+  height: 34px;
+}
+.heroBadge h4 {
+  font-size: 13px;
+}
+.hero h1 {
+  text-align: left;
+  font-size: 54px;
+}
+.heroBadge span {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #04aa20;
+  margin-right: 10px;
+  margin-left: 14px;
+}
+/* Стили левого блока внутри  Hero */
+.heroCopy {
+  width: 624px;
+}
+
+/* Стили блоку с описанием тренажера */
+.heroSub {
+  width: 540px;
+  height: 85px;
+  text-align: left;
+}
+
+/* Стили кнопок внутри Hero  */
+.heroCta {
+  display: flex;
+  gap: 20px;
+}
+/* стили левой кнопки внутри Hero  */
+.btnStart {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 230px;
+  height: 54px;
+  font-size: 16px;
+  border-radius: 20px;
+  background-color: #0f01d4;
+  color: #fff;
+  cursor: pointer;
+}
+/* стили правой кнопки внутри Hero  */
+.btnProgram {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 230px;
+  height: 54px;
+  font-size: 16px;
+  border-radius: 20px;
+  background-color: #fff;
+  color: #0f01d4;
+  cursor: pointer;
+}
+.btnStart img,
+.btnProgram img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Стили левого блока внутри Hero  */
+.heroVisual {
+  width: 600px;
+  height: 524px;
+  background-color: #ffffff;
+  box-shadow: 0px 24px 48px rgba(19, 26, 61, 0.1216);
+  border-radius: 20px;
+}
+/* Стили верхней части левого блока внутри Hero  */
+.topicChip {
+  border: 1px solid #b3b1b1;
+  border-radius: 20px;
+  padding: 8px 16px;
+  background-color: #e9e8fa;
+}
+.prewiewTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 22px 22px 22px;  
+}
+.heroVisual p{
+    font-size: 20px;
+    font-weight: bold;
+}
+.formulaBlock{
+    font-size: 16px;
+    font-weight: 600;
+    color: #2A38B8
+}

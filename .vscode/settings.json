@@ -1,0 +1,26 @@
+/* {
+  // Отключает автоматическое появление списка автодополнения при вводе
+  // (список всё ещё можно вызвать вручную через Ctrl+Space)
+  "editor.quickSuggestions": {
+    "other": "off",
+    "comments": "off",
+    "strings": "off"
+  },
+
+  // Отключает появление списка автодополнения по триггерным символам
+  // (точка, скобка и т.д.)
+  "editor.suggestOnTriggerCharacters": false,
+
+  // Отключает всплывающую подсказку с параметрами функции
+  // (например, при вводе setState( ... ))
+  "editor.parameterHints.enabled": false,
+
+  // Отключает серый текст-предсказание (inline suggestion, Copilot и т.п.)
+  "editor.inlineSuggest.enabled": false,
+
+  // Отключает подсказку при наведении курсора на код (hover)
+  "editor.hover.enabled": "off",
+
+  // Отключает затенение неиспользуемого кода
+  "editor.showUnused": false
+} */

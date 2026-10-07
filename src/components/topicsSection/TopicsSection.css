@@ -1,0 +1,27 @@
+.topicsHead{ /* стили для первой части блока */
+    display: flex; /* показывает, что блок является flex-контейнером */
+    flex-direction: column;  /* вертикальное расположение */
+    align-items: flex-start;  /* выравнивание по левому краю */
+    padding-top: 84px; /* отступ сверху в блоке */
+}
+.topicsHead h3{  /* стили для заголовка */
+    font-size: 13px;  /* размер шрифта */
+    margin-bottom: 12px;  /* отступ снизу */
+    color: #3B4CE0; /* цвет шрифта */
+}
+.topicsHead h2 {
+    font-size: 38px; /* размер шрифта */
+    font-weight: 800; /* жирность шрифта */ 
+}
+.topicsHead p {
+    font-size: 16px; /* размер шрифта */
+    color: #5A6183; /* цвет шрифта */
+    width: 640px; /* ширина блока */
+    text-align: left; /* выравнивание по левому краю */
+}
+.topicCards { /* контейнер со списком карточек */
+    display: grid; /* раскладываем карточки в сетку */
+    grid-template-columns: repeat(4, 1fr); /* 4 колонки одинаковой ширины */
+    gap: 24px; /* расстояние между карточками */
+    padding: 56px 0 100px; /* отступы вокруг сетки */
+}

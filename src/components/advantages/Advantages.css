@@ -1,0 +1,23 @@
+.advantagesHeader{ /* стили для первой части блока */
+    display: flex; /* показывает, что блок является flex-контейнером */
+    flex-direction: column;  /* вертикальное расположение */
+    align-items: flex-start;  /* выравнивание по левому краю */
+    padding-top: 84px; /* отступ сверху в блоке */
+    background-color: #F7F8FC; /* цвет фона */
+    
+}
+.advantagesHeader h3{  /* стили для заголовка */
+    font-size: 13px;  /* размер шрифта */
+    margin-bottom: 12px;  /* отступ снизу */
+    color: #3B4CE0; /* цвет шрифта */
+}
+.advantagesHeader h2 {
+    font-size: 38px; /* размер шрифта */
+    font-weight: 800; /* жирность шрифта */ 
+}
+.advantagesHeader p {
+    font-size: 16px; /* размер шрифта */
+    color: #5A6183; /* цвет шрифта */
+    width: 640px; /* ширина блока */
+    text-align: left; /* выравнивание по левому краю */
+}

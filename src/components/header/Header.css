@@ -1,0 +1,66 @@
+.header {
+  height: 84px;
+  display: flex;
+  align-items: center;
+}
+
+.header .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.image {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.image img {
+  width: 50px;
+  height: 50px;
+  border-radius: 30%;
+  background-color: #0f01d4;
+}
+
+.image h3 {
+  margin: 0;
+  font-size: 30px;
+}
+
+.header nav ul {
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.header nav li {
+  list-style: none;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.action {
+  display: flex;
+  gap: 12px;
+}
+
+.signUp {
+  width: 132px;
+  height: 43px;
+  border-radius: 12px;
+  color: #fff;
+  background-color: #0f01d4;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.logIn {
+  background-color: #fff;
+  border: 0;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+}

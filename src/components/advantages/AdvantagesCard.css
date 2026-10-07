@@ -1,0 +1,35 @@
+/* Стили одной карточки темы */
+.advantagesCard {
+    background-color: #ffffff; /* белый фон карточки */
+    border-radius: 20px; /* скругление углов */
+    box-shadow: 0px 12px 32px rgba(19, 26, 61, 0.1); /* мягкая тень */
+    padding: 24px; /* внутренний отступ */
+    text-align: left; /* текст по левому краю */
+}
+.advantagesCard img { /* иконка темы */
+    width: 48px; /* ширина иконки */
+    height: 48px; /* высота иконки */
+    object-fit: contain; /* не растягиваем картинку */
+    margin-bottom: 16px; /* отступ снизу */
+}
+.advantagesCard h3 { /* название темы */
+    font-size: 20px; /* размер шрифта */
+    font-weight: 800; /* жирность шрифта */
+    margin-bottom: 8px; /* отступ снизу */
+}
+.advantagesCard span { /* класс и количество уроков */
+    font-size: 14px; /* размер шрифта */
+    font-weight: 600; /* жирность шрифта */
+    color: #3B4CE0; /* цвет шрифта */
+    display: block; /* переносим на отдельную строку */
+    margin-bottom: 12px; /* отступ снизу */
+}
+.advantagesCard p { /* описание темы */
+    font-size: 14px; /* размер шрифта */
+    color: #5A6183; /* цвет шрифта */
+    line-height: 1.5; /* межстрочный интервал */
+}
+.advantagesFooter{
+    display: flex; /* показывает, что блок является flex-контейнером */
+    justify-content: space-between; /* равномерное распределение по горизонтали */
+}
