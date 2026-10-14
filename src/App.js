@@ -7,8 +7,14 @@ import notificationVariants from "./components/notification/notificationVariants
 import TopicsSection from "./components/topicsSection/TopicsSection";
 /* Импортируем блок с преимуществами */
 import Advantages from "./components/advantages/Advantages";
+/* Импортируем блок с путем обучения */
+import LeaningPath from "./components/learningPath/LeaningPath";
+/* Импортируем блок с отзывами */
+import ReviewsSection from "./components/reviewsSection/ReviewsSection";
 /* Импортируем данные о темах из JSON-файла */
 import topics from "./topic.json";
+import reviews from "./review.json";
+
 
 import "./App.css";
 
@@ -45,6 +51,8 @@ function App() {
       {activeNotification && <Notification variant={activeNotification} />}    
       <TopicsSection topics={topics.topics} />  {/* Блок с темами подключаем */}
       <Advantages advantages={topics.advantages} /> {/*Подключаем блок с преимуществами  */}
+      <LeaningPath paths={topics.paths} /> {/* Подключаем блок с путем обучения */}
+      <ReviewsSection reviews={reviews.reviews}/>
     </div>
   );
 }

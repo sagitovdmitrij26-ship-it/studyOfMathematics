@@ -11,6 +11,14 @@
   width: 100%;
 }
 
+.header .wrapper{ /* блок внутри wrap  */
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
 .image {
   display: flex;
   align-items: center;

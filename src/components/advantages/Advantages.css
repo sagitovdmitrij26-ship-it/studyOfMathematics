@@ -1,9 +1,9 @@
 .advantagesHeader{ /* стили для первой части блока */
     display: flex; /* показывает, что блок является flex-контейнером */
     flex-direction: column;  /* вертикальное расположение */
-    align-items: flex-start;  /* выравнивание по левому краю */
-    padding-top: 84px; /* отступ сверху в блоке */
+    align-items: flex-start;  /* выравнивание по левому краю */    
     background-color: #F7F8FC; /* цвет фона */
+    margin: 84px 80px 36px;
     
 }
 .advantagesHeader h3{  /* стили для заголовка */
@@ -20,4 +20,8 @@
     color: #5A6183; /* цвет шрифта */
     width: 640px; /* ширина блока */
     text-align: left; /* выравнивание по левому краю */
+}
+.advantagesFooter {
+    padding: 36px 80px 84px;
+    gap: 20px;
 }

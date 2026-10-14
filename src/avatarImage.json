@@ -1,0 +1,54 @@
+{
+  "avatars": [
+    {
+      "id": 1,
+      "image": "./avatar/1.avif",
+      "name": "Девочка"
+    },
+    {
+      "id": 2,
+      "image": "./avatar/2.jpg",
+      "name": "Мальчик"
+    },
+    {
+      "id": 3,
+      "image": "./avatar/3.avif",
+      "name": "Собака"
+    },
+    {
+      "id": 4,
+      "image": "./avatar/4.avif",
+      "name": "Кошка"
+    },
+    {
+      "id": 5,
+      "image": "./avatar/5.avif",
+      "name": "Девочка в костюме"
+    },
+    {
+      "id": 6,
+      "image": "./avatar/6.avif",
+      "name": "мальчик с прической"
+    },
+    {
+      "id": 7,
+      "image": "./avatar/7.jpg",
+      "name": "котенок в кепке"
+    },
+    {
+      "id": 8,
+      "image": "./avatar/8.png",
+      "name": "котенок с красными глазами"
+    },
+    {
+      "id": 9,
+      "image": "./avatar/9.jpg",
+      "name": "путешественник"
+    },
+    {
+      "id": 10,
+      "image": "./avatar/10.jpg",
+      "name": "котенок с глазами"
+    }
+  ]
+}

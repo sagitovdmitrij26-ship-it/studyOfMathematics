@@ -1,5 +1,12 @@
 {
-    "recommendations": [
-        "yandex-cloud.sourcecraft-code-assist"
-    ]
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "dsznajder.es7-react-js-snippets",
+    "christian-kohler.path-intellisense",
+    "christian-kohler.npm-intellisense",
+    "formulahendry.auto-rename-tag",
+    "xabikos.JavaScriptSnippets",
+    "ms-vscode.vscode-typescript-next"
+  ]
 }

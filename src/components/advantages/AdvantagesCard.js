@@ -11,6 +11,7 @@ function AdvantagesCard({ advantage }) {
             <p>{text}</p>
             <span>{path}</span>
             
+            
         </div>
     )
 

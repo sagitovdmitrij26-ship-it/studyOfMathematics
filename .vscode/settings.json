@@ -1,26 +1,43 @@
-/* {
-  // Отключает автоматическое появление списка автодополнения при вводе
-  // (список всё ещё можно вызвать вручную через Ctrl+Space)
+{
+  // Настройки IntelliSense включены по умолчанию.
+  // Если подсказки пропали — проверьте, что этот файл не отключает их,
+  // и что в корне проекта есть jsconfig.json.
   "editor.quickSuggestions": {
-    "other": "off",
+    "other": "on",
     "comments": "off",
-    "strings": "off"
+    "strings": "on"
   },
-
-  // Отключает появление списка автодополнения по триггерным символам
-  // (точка, скобка и т.д.)
-  "editor.suggestOnTriggerCharacters": false,
-
-  // Отключает всплывающую подсказку с параметрами функции
-  // (например, при вводе setState( ... ))
-  "editor.parameterHints.enabled": false,
-
-  // Отключает серый текст-предсказание (inline suggestion, Copilot и т.п.)
-  "editor.inlineSuggest.enabled": false,
-
-  // Отключает подсказку при наведении курсора на код (hover)
-  "editor.hover.enabled": "off",
-
-  // Отключает затенение неиспользуемого кода
-  "editor.showUnused": false
-} */
+  "editor.suggestOnTriggerCharacters": true,
+  "editor.parameterHints.enabled": true,
+  "editor.inlineSuggest.enabled": true,
+  "editor.hover.enabled": "on",
+  "editor.showUnused": true,
+  // Явно включаем подсказки для JS/TS (защита от глобальных настроек и расширений)
+  "javascript.suggest.enabled": true,
+  "typescript.suggest.enabled": true,
+  "editor.suggest.showWords": true,
+  "editor.suggest.showSnippets": true,
+  // Поведение списка подсказок
+  "editor.suggestSelection": "first",
+  "editor.suggest.preview": true,
+  "editor.acceptSuggestionOnEnter": "smart",
+  // Автоимпорты и обновление путей при перемещении файлов
+  "javascript.suggest.autoImports": true,
+  "typescript.suggest.autoImports": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  // Предпочитать алиас @/ и одинарные кавычки (стиль проекта)
+  "javascript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.preferences.quoteStyle": "single",
+  // Использовать локальный TypeScript из node_modules
+  "typescript.tsdk": "node_modules/typescript/lib",
+  // Emmet (быстрое написание JSX) в .js файлах
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "emmet.syntaxProfiles": {
+    "javascript": "jsx"
+  }
+}

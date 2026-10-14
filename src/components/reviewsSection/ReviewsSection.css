@@ -1,0 +1,20 @@
+.reviewsHeader h3 {
+  font-size: 13px;
+  color: #3b4ce0;
+  letter-spacing: 1.2px;
+  text-align: left;
+}
+.reviewsHeader h2 {
+    text-align: left;
+    font-size: 38px;
+    font-weight: 800;
+    color: #131A3D;
+}
+.reviewsHeader p {
+    font-size: 16px;
+    color: #5A6183;
+    text-align: left;
+}
+.reviewsHeader {
+    padding: 84px 0 36px;
+}

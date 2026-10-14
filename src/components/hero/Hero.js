@@ -44,13 +44,12 @@ function Hero({ onStart }) {
             <div className="topicChip">Алгебра: 8 класс</div>
             <p>Задача 4 из 10</p>
           </div>
-          <p>            
+          <p>
             Решите уравнение: x<sup>2</sup> - 5x + 6 = 0
           </p>
           <div className="formulaBlock">
             D = b <sup>2</sup> - 4ac = 25 - 24 = 1
           </div>
-        
         </div>
       </div>
     </div>

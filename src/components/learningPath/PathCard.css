@@ -1,0 +1,28 @@
+.pathCard h3{
+font-size: 18px;
+font-weight: 700;
+color: #FFFF;
+}
+.pathCard p{
+    font-size: 14px;
+    font-weight: 400;
+    color: #A9B3DE;
+    padding: 14px 24px 56px
+    
+}
+.pathCard span{
+   font-size: 13px;
+   font-weight: 600;    
+}
+.pathCard{
+    background-color: #2C3568;
+    width: 305px;
+    border-radius: 20px;
+    
+}
+.textCard{
+    width: 257px;
+    padding: 24px 24px 14px;
+    
+    
+}

@@ -7,7 +7,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Ширина каждого блока */
 .wrap {
   max-width: 1440px;
   margin: 0 auto;
 }
+/* Ширина внутри каждого блока */
+.wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+
+

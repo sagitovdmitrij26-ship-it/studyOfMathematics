@@ -1,0 +1,32 @@
+.leaningSection .wrap {
+  background-color: #141b3f;
+}
+
+.LeaningHead {
+  padding: 84px 0 36px 0;
+  text-align: left;
+}
+
+.LeaningHead h3 {
+  color: #8fa0ff;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.LeaningHead h2 {
+  color: #ffffff;
+  font-size: 38px;
+  font-weight: 800;
+}
+
+.LeaningHead p {
+  color: #aeb8e4;
+  font-size: 16px;
+  font-weight: 400;
+}
+.pathFooter {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 84px;
+  gap: 20px;
+}
