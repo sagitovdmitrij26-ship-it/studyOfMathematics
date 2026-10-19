@@ -1,7 +1,8 @@
+import ReviewCard from "./reviewCard";
 /* блок "отзывы" о сайте */
 import "./ReviewsSection.css";
 
-function ReviewsSection({ rewiews = [] }) {
+function ReviewsSection({ reviews = [] }) {
   return (
     <div className="wrap">
       <div className="wrapper">
@@ -14,8 +15,8 @@ function ReviewsSection({ rewiews = [] }) {
         {/* ======================================подвал блока======================== */}
         <div className="rewiewsFooter">
           {
-            rewiews.length
-            ? rewiews.map((rewiew) => <)
+            reviews.length
+            ? reviews.map((review) => <ReviewCard key={review.id} review={review} />) : null
           }
         </div>
         {/* ========================================================================== */}

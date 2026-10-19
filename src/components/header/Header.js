@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Entrance from "../entrance/entrance";
+import Entrance from "../../homePage/entrance/entrance";
 import "./Header.css";
 
 function Header({ onForm }) {

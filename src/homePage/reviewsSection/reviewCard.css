@@ -1,0 +1,51 @@
+.review {
+    width: 413px;
+    border: 2px solid rgb(197, 195, 195);
+    border-radius: 20px;
+    padding: 26px;
+    box-shadow: 8px 8px 15px 8px rgba(22, 17, 17, 0.1);
+}
+
+/*стили для блока с аватаром, именем, классом пользователя  */
+.user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 0 10px;
+}
+
+.nameUser h3 {
+    color: rgba(19, 26, 61, 1);
+    font-family: "Manrope";
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.nameUser p {
+    color: rgba(140, 147, 174, 1);
+    font-family: "Manrope";
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.text p {
+    color: rgba(43, 49, 89, 1);
+    font-family: "Manrope";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 160%;
+
+}
+.stars {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 4px;
+}

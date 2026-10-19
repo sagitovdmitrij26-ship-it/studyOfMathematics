@@ -1,16 +1,16 @@
 import { useRef, useState } from "react";
 import Header from "./components/header/Header";
-import Hero from "./components/hero/Hero";
+import Hero from "./homePage/hero/Hero";
 import Notification from "./components/notification/Notification";
 import notificationVariants from "./components/notification/notificationVariants";
 /* Импортируем блок с темами */
-import TopicsSection from "./components/topicsSection/TopicsSection";
+import TopicsSection from "./homePage/topicsSection/TopicsSection";
 /* Импортируем блок с преимуществами */
-import Advantages from "./components/advantages/Advantages";
+import Advantages from "./homePage/advantages/Advantages";
 /* Импортируем блок с путем обучения */
-import LeaningPath from "./components/learningPath/LeaningPath";
+import LeaningPath from "./homePage/learningPath/LeaningPath";
 /* Импортируем блок с отзывами */
-import ReviewsSection from "./components/reviewsSection/ReviewsSection";
+import ReviewsSection from "./homePage/reviewsSection/ReviewsSection";
 /* Импортируем данные о темах из JSON-файла */
 import topics from "./topic.json";
 import reviews from "./review.json";
