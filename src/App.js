@@ -52,7 +52,7 @@ function App() {
       <TopicsSection topics={topics.topics} />  {/* Блок с темами подключаем */}
       <Advantages advantages={topics.advantages} /> {/*Подключаем блок с преимуществами  */}
       <LeaningPath paths={topics.paths} /> {/* Подключаем блок с путем обучения */}
-      <ReviewsSection reviews={reviews.reviews}/>
+      <ReviewsSection reviews={reviews.reviews}/>      
     </div>
   );
 }

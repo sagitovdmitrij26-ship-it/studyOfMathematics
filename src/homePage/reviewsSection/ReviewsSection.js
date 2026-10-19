@@ -1,4 +1,5 @@
 import ReviewCard from "./reviewCard";
+import ReviewsSlider from './ReviewsSlider';
 /* блок "отзывы" о сайте */
 import "./ReviewsSection.css";
 
@@ -14,10 +15,7 @@ function ReviewsSection({ reviews = [] }) {
         </div>
         {/* ======================================подвал блока======================== */}
         <div className="rewiewsFooter">
-          {
-            reviews.length
-            ? reviews.map((review) => <ReviewCard key={review.id} review={review} />) : null
-          }
+          <ReviewsSlider reviews = {reviews}/>
         </div>
         {/* ========================================================================== */}
       </div>

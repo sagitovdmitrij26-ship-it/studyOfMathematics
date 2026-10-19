@@ -1,9 +1,11 @@
 .review {
     width: 413px;
+    height: 100%;
     border: 2px solid rgb(197, 195, 195);
     border-radius: 20px;
-    padding: 26px;
     box-shadow: 8px 8px 15px 8px rgba(22, 17, 17, 0.1);
+    display: flex;
+    flex-direction: column;
 }
 
 /*стили для блока с аватаром, именем, классом пользователя  */
@@ -11,6 +13,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: auto;
 }
 
 .user img {
@@ -48,4 +51,10 @@
     justify-content: flex-end;
     align-items: center;
     gap: 4px;
+}
+.text {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }

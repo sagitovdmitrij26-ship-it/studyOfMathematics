@@ -22,3 +22,8 @@
     display: flex;
     gap: 20px;
 }
+
+.swiper-slide {
+    display: flex;
+    height: auto;
+}
