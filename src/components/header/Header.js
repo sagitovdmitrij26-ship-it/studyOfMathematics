@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Entrance from "../../homePage/entrance/entrance";
+import Logo from "../logoSite/Logo";
 import "./Header.css";
 
 function Header({ onForm }) {
@@ -15,8 +16,7 @@ function Header({ onForm }) {
           {/* Передаём логотип и название как children в компонент Entrance */}
           <Entrance>
             <div className="image">
-              <img src="/image/sigma.svg" alt="Sigma" />
-              <h3>Матеум</h3>
+              <Logo />
             </div>
           </Entrance>
           <nav>

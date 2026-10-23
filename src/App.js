@@ -1,3 +1,4 @@
+import { Routes, Route } from "react-router-dom";
 import { useRef, useState } from "react";
 import Header from "./components/header/Header";
 import Hero from "./homePage/hero/Hero";
@@ -12,6 +13,10 @@ import LeaningPath from "./homePage/learningPath/LeaningPath";
 /* Импортируем блок с отзывами */
 import ReviewsSection from "./homePage/reviewsSection/ReviewsSection";
 /* Импортируем данные о темах из JSON-файла */
+import CtaSection from './homePage/ctaSection/CtaSection';
+/* Импортируем компонент Footer */
+import Footer from "./components/footer/Footer";
+
 import topics from "./topic.json";
 import reviews from "./review.json";
 
@@ -52,7 +57,9 @@ function App() {
       <TopicsSection topics={topics.topics} />  {/* Блок с темами подключаем */}
       <Advantages advantages={topics.advantages} /> {/*Подключаем блок с преимуществами  */}
       <LeaningPath paths={topics.paths} /> {/* Подключаем блок с путем обучения */}
-      <ReviewsSection reviews={reviews.reviews}/>      
+      <ReviewsSection reviews={reviews.reviews}/>     
+      <CtaSection /> 
+      <Footer />
     </div>
   );
 }

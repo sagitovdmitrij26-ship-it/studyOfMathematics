@@ -1,29 +1,36 @@
+.wrapper {
+    padding: 84px 0;
+}
 .reviewsHeader h3 {
   font-size: 13px;
   color: #3b4ce0;
   letter-spacing: 1.2px;
   text-align: left;
+  margin: 0 0 12px;
 }
 .reviewsHeader h2 {
     text-align: left;
     font-size: 38px;
     font-weight: 800;
     color: #131A3D;
+    margin: 0 0 12px;
 }
 .reviewsHeader p {
     font-size: 16px;
     color: #5A6183;
     text-align: left;
+    margin: 0;
 }
 .reviewsHeader {
     padding: 84px 0 36px;
 }
 .rewiewsFooter {
     display: flex;
-    gap: 20px;
+    gap: 20px; 
+    
 }
 
 .swiper-slide {
     display: flex;
-    height: auto;
+    height: auto;    
 }

@@ -1,0 +1,120 @@
+.footer .wrap {
+    background: #141b3f;
+}
+
+.footerLogo {
+    width: 320px;
+
+}
+
+.socialMedia {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.footerLogo h3 {
+    color: rgba(255, 255, 255, 1);
+    font-family: "Manrope";
+    font-size: 21px;
+    line-height: 29px;
+    letter-spacing: -0.3px;
+}
+
+.footerLogo p {
+    color: rgba(154, 163, 199, 1);
+    font-family: "Manrope";
+    font-size: 14px;
+    line-height: 160%;
+    text-align: left;
+}
+.footerTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.footerCol h3 {
+    margin: 0 0 16px;
+    color: #ffffff;
+    font-family: "Manrope";
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+}
+
+.footerCol ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footerCol li {
+    margin: 0 0 8px;
+}
+
+.footerCol li:last-child {
+    margin-bottom: 0;
+}
+
+.footerCol a {
+    color: #9aa3c7;
+    font-family: "Manrope";
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 160%;
+    text-decoration: none;
+}
+
+.footerCol a:hover {
+    color: #ffffff;
+}
+
+.footerBottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    margin-top: 40px;
+    padding: 18px 0 28px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footerCopy {
+    margin: 0;
+    color: #9aa3c7;
+    font-family: "Manrope";
+    font-size: 13px;
+    line-height: 18px;
+    white-space: nowrap;
+}
+
+.footerSymbols {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 8px 20px;
+    border: 1px solid rgba(154, 163, 199, 0.35);
+    border-radius: 12px;
+    color: #9aa3c7;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.footerLegal {
+    display: flex;
+    gap: 24px;
+    flex-shrink: 0;
+}
+
+.footerLegal a {
+    color: #9aa3c7;
+    font-family: "Manrope";
+    font-size: 13px;
+    line-height: 18px;
+    text-decoration: none;
+}
+
+.footerLegal a:hover {
+    color: #ffffff;
+}
