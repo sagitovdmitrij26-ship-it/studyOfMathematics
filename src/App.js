@@ -16,6 +16,8 @@ import ReviewsSection from "./homePage/reviewsSection/ReviewsSection";
 import CtaSection from './homePage/ctaSection/CtaSection';
 /* Импортируем компонент Footer */
 import Footer from "./components/footer/Footer";
+/* Импортируем компонент RegistrationForm */
+import RegistrationForm from "./components/form/RegistrationForm";
 
 import topics from "./topic.json";
 import reviews from "./review.json";
@@ -26,6 +28,7 @@ import "./App.css";
 function App() {
   const [activeNotification, setActiveNotification] = useState(null);
   const hideTimerRef = useRef(null);
+  const [isRegistrationFormOpen, setIsRegistrationFormOpen] = useState(false);
 
   /* Показывает уведомление по индексу из массива notificationVariants */
   const showNotification = (index) => {
@@ -50,11 +53,16 @@ function App() {
   return (
     <div className="App">
       {/* При клике на "Войти" показываем уведомление о необходимости регистрации */}
-      <Header onForm={handleLoginClick} />
+      <Header onForm={handleLoginClick} 
+      onSignUp={() => setIsRegistrationFormOpen(true)}/>
       {/* При клике на «Начать бесплатно» показываем первое уведомление (success) */}
       <Hero onStart={() => showNotification(2)} />
       {activeNotification && <Notification variant={activeNotification} />}    
       <TopicsSection topics={topics.topics} />  {/* Блок с темами подключаем */}
+      <RegistrationForm
+        isRegistrationFormOpen={isRegistrationFormOpen}
+        onClose={() => setIsRegistrationFormOpen(false)}
+      />
       <Advantages advantages={topics.advantages} /> {/*Подключаем блок с преимуществами  */}
       <LeaningPath paths={topics.paths} /> {/* Подключаем блок с путем обучения */}
       <ReviewsSection reviews={reviews.reviews}/>     

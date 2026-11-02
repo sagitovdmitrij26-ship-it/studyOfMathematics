@@ -3,11 +3,12 @@ import Entrance from "../../homePage/entrance/entrance";
 import Logo from "../logoSite/Logo";
 import "./Header.css";
 
-function Header({ onForm }) {
+function Header({ onForm, onSignUp }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
+  
   };
   return (
     <header className="header">
@@ -33,7 +34,7 @@ function Header({ onForm }) {
             <button className="logIn" onClick={onForm}>
               Войти
             </button>
-            <button className="signUp">Записаться</button>
+            <button className="signUp" onClick={ onSignUp }>Записаться</button>
           </div>
         </div>
       </div>
