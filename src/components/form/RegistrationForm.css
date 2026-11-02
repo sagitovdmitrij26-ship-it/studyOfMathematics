@@ -1,3 +1,4 @@
+/* стили ьдля формы */
 .registrationOverlay {
   position: fixed;
   inset: 0;
@@ -10,17 +11,30 @@
 
 .registrationForm {
   position: relative;
-  width: 420px;
+  width: 520px;
   max-width: calc(100% - 32px);
-  padding: 32px 28px 28px;
-  border-radius: 20px;
-  background: #fff;
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
+  padding: 40px 36px 36px;
+  border-radius: 24px;
+  background: linear-gradient(165deg, #8ec8f0 0%, #fff6c2 100%);
   box-shadow: 0 24px 48px rgba(19, 26, 61, 0.2);
+  font-size: 18px;
 }
 
 .registrationForm h2 {
+  margin: 0;
+  font-size: 32px;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
   margin: 0 0 20px;
-  text-align: left;
+  text-align: center;
 }
 
 .form-group {
@@ -32,25 +46,28 @@
 
 .form-group label {
   margin-top: 8px;
-  font-size: 14px;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .form-group input {
-  height: 44px;
-  padding: 0 14px;
+  height: 52px;
+  padding: 0 16px;
   border: 1px solid #d5d7e6;
   border-radius: 12px;
   font: inherit;
+  font-size: 18px;
 }
 
 .form-group button {
   margin-top: 16px;
-  height: 48px;
+  height: 56px;
   border: 0;
   border-radius: 20px;
   background: #0f01d4;
   color: #fff;
   font: inherit;
+  font-size: 18px;
   font-weight: 600;
   cursor: pointer;
 }
@@ -63,5 +80,62 @@
   background: transparent;
   color: #0f01d4;
   font: inherit;
+  font-size: 18px;
   cursor: pointer;
+}
+
+.avatarSelect {
+  position: relative;
+}
+
+.avatarSelectButton,
+.avatarOption {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 52px;
+  padding: 8px 16px;
+  text-align: left;
+  font-size: 18px;
+}
+
+.avatarSelectButton img,
+.avatarOption img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.avatarSelectList {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% + 6px);
+  z-index: 2;
+  max-height: 220px;
+  margin: 0;
+  padding: 6px;
+  overflow-y: auto;
+  list-style: none;
+  border: 1px solid #d5d7e6;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 12px 24px rgba(19, 26, 61, 0.12);
+}
+
+.avatarSelectList li {
+  margin: 0;
+}
+
+.avatarOption {
+  height: 40px;
+  border: 0;
+  border-radius: 8px;
+}
+
+.avatarOption:hover,
+.avatarOption--active {
+  background: #eef0ff;
 }
