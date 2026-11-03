@@ -39,7 +39,7 @@ function RegistrationForm({ isRegistrationFormOpen, onClose, }) {
         onSubmit={handleSubmit}
       >
         <button className="registrationClose" type="button" onClick={avatarListClose}>
-          Закрыть
+          Закрыть 
         </button>
         <div className="logo">
           <Logo />

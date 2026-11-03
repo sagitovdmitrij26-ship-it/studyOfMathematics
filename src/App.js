@@ -18,7 +18,8 @@ import CtaSection from './homePage/ctaSection/CtaSection';
 import Footer from "./components/footer/Footer";
 /* Импортируем компонент RegistrationForm */
 import RegistrationForm from "./components/form/RegistrationForm";
-
+/* Импортируем компонент LoginForm */
+import LoginForm from "./components/form/loginForm";
 import topics from "./topic.json";
 import reviews from "./review.json";
 
@@ -29,6 +30,7 @@ function App() {
   const [activeNotification, setActiveNotification] = useState(null);
   const hideTimerRef = useRef(null);
   const [isRegistrationFormOpen, setIsRegistrationFormOpen] = useState(false);
+  const [isLoginFormOpen, setIsLoginFormOpen] = useState(false); // состояние для формы входа зарегестрированного пользователя
 
   /* Показывает уведомление по индексу из массива notificationVariants */
   const showNotification = (index) => {
@@ -53,8 +55,10 @@ function App() {
   return (
     <div className="App">
       {/* При клике на "Войти" показываем уведомление о необходимости регистрации */}
-      <Header onForm={handleLoginClick} 
-      onSignUp={() => setIsRegistrationFormOpen(true)}/>
+      <Header
+        onForm={() => setIsLoginFormOpen(true)}
+        onSignUp={() => setIsRegistrationFormOpen(true)}
+      />
       {/* При клике на «Начать бесплатно» показываем первое уведомление (success) */}
       <Hero onStart={() => showNotification(2)} />
       {activeNotification && <Notification variant={activeNotification} />}    
@@ -62,6 +66,10 @@ function App() {
       <RegistrationForm
         isRegistrationFormOpen={isRegistrationFormOpen}
         onClose={() => setIsRegistrationFormOpen(false)}
+      />
+      <LoginForm
+        isLoginFormOpen={isLoginFormOpen}
+        onClose={() => setIsLoginFormOpen(false)}
       />
       <Advantages advantages={topics.advantages} /> {/*Подключаем блок с преимуществами  */}
       <LeaningPath paths={topics.paths} /> {/* Подключаем блок с путем обучения */}
