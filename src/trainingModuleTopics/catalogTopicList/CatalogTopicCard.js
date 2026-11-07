@@ -13,6 +13,7 @@ function CatalogTopicCard({ catalogTopicList, activeClass }) {
             <div className='progress-bar'>
                 <span>{activeClass || "Выберите класс"}</span>
             </div>
+            <button>Открыть раздел</button>
         </div>
 
     )
