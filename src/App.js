@@ -22,7 +22,8 @@ import RegistrationForm from "./components/form/RegistrationForm";
 import LoginForm from "./components/form/loginForm";
 import topics from "./topic.json";
 import reviews from "./review.json";
-
+/* импорт компонента с каталогом тем */
+import CatalogTopics from "./trainingModuleTopics/catalogTopics/CatalogTopics";
 
 import "./App.css";
 
@@ -59,22 +60,39 @@ function App() {
         onForm={() => setIsLoginFormOpen(true)}
         onSignUp={() => setIsRegistrationFormOpen(true)}
       />
-      {/* При клике на «Начать бесплатно» показываем первое уведомление (success) */}
-      <Hero onStart={() => showNotification(2)} />
-      {activeNotification && <Notification variant={activeNotification} />}    
-      <TopicsSection topics={topics.topics} />  {/* Блок с темами подключаем */}
-      <RegistrationForm
-        isRegistrationFormOpen={isRegistrationFormOpen}
-        onClose={() => setIsRegistrationFormOpen(false)}
-      />
-      <LoginForm
-        isLoginFormOpen={isLoginFormOpen}
-        onClose={() => setIsLoginFormOpen(false)}
-      />
-      <Advantages advantages={topics.advantages} /> {/*Подключаем блок с преимуществами  */}
-      <LeaningPath paths={topics.paths} /> {/* Подключаем блок с путем обучения */}
-      <ReviewsSection reviews={reviews.reviews}/>     
-      <CtaSection /> 
+      <Routes> {/* оборачиваем все, кроме шапки и подвала, чтобы они всегда были на странице */}
+        <Route
+          path="/"
+          element={
+            <>
+              {/* При клике на «Начать бесплатно» показываем первое уведомление (success) */}
+              <Hero onStart={() => showNotification(2)} />
+              {activeNotification && <Notification variant={activeNotification} />}
+              <TopicsSection topics={topics.topics} />  {/* Блок с темами подключаем */}
+              <RegistrationForm
+                isRegistrationFormOpen={isRegistrationFormOpen}
+                onClose={() => setIsRegistrationFormOpen(false)}
+              />
+              <LoginForm
+                isLoginFormOpen={isLoginFormOpen}
+                onClose={() => setIsLoginFormOpen(false)}
+              />
+              <Advantages advantages={topics.advantages} /> {/*Подключаем блок с преимуществами  */}
+              <LeaningPath paths={topics.paths} /> {/* Подключаем блок с путем обучения */}
+              <ReviewsSection reviews={reviews.reviews} />
+              <CtaSection />
+            </>
+          }
+        />
+        <Route
+          path="/catalogTopics"
+          element={
+            <>
+              <CatalogTopics catalogTopicLists={topics.catalogTopicLists} />
+            </>
+          }
+        />
+      </Routes>
       <Footer />
     </div>
   );

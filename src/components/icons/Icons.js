@@ -9,6 +9,7 @@ import "./Icons.css"
     logo: "/image/sigma.svg",
     telegram: "/iconsSite/telegram.png",
     max: "/iconsSite/max.jpg",
+    search: "/iconsSite/search.png",
  }
 
  /* Передаем в аргумент функции деструктуризацией имя иконки, alt, className (СSS класс), 

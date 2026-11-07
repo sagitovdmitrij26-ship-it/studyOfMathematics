@@ -1,0 +1,117 @@
+.catalogMain__title {
+    text-align: left;
+}
+
+.catalogMain__title h1 {
+    color: rgba(19, 26, 61, 1);
+    font-family: "Manrope";
+    font-size: 34px;
+    font-weight: 800;
+    line-height: 46px;
+    letter-spacing: -0.8px;
+    text-align: left;
+}
+
+.catalogMain__title p {
+    color: rgba(90, 97, 131, 1);
+    font-family: "Manrope";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 160%;
+    letter-spacing: 0px;
+    text-align: left;
+
+}
+
+.catalogMain_toolbar {
+    display: flex;    
+    align-items: center;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.catalogMain_search {
+    position: relative;
+    flex: 1 1 220px;
+    min-width: 180px;
+    max-width: 420px;
+}
+
+.catalogMain_search .icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    pointer-events: none;
+}
+
+.catalogMain_toolbar p {
+    margin: 0;
+    flex-shrink: 0;
+    white-space: nowrap;
+    color: rgba(59, 76, 224, 1);
+    font-family: "Manrope";
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 18px;
+}
+
+.catalogMain_search input {
+    width: 100%;
+    padding: 14px 16px 14px 44px;
+    box-sizing: border-box;
+    border: 1px solid rgba(227, 231, 245, 1);
+    border-radius: 14px;
+    background: rgba(247, 248, 252, 1);
+}
+
+.classSelection {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.classSelection button {
+    width: 100px;
+    height: 34px;
+    border-radius: 14px;
+    flex-shrink: 0;
+}
+
+.difficuktyLevel {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 10px;
+    margin: 16px 0 0;
+}
+
+.difficuktyLevel button {
+    width: 82px;
+    height: 34px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 14px 0px 14px;
+    box-sizing: border-box;
+    border: 1px solid rgba(227, 231, 245, 1);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 1);
+
+}
+
+.difficuktyLevel p {
+    margin: 0;
+    color: rgba(59, 76, 224, 1);
+    font-family: "Manrope";
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: 0px;
+    text-align: left;
+}

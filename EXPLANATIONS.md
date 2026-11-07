@@ -49,3 +49,14 @@
     -loginForm.js (компонент для формы входа зарегестрированного пользователя)
     -loginForm.css
 ```
+### папка trainingModuleTopics (темы тренажора)
+```
+1. catalogTopics (папка для компонента с каталогом всех тем)
+    -catalogTopics.js (компнент со списком всех тем)
+    -catalogTopics.css
+2. catalogTopicList (папка для компонента списка всех разделов сайта. Карточка и компонент с карточки будут отлшичастся от компонента catalogTopics на главной страницы)
+    -СatalogTopicList.js (список всех предметов)
+    -СatalogTopicList.сss
+    -CatalogTopicCard.js (компонент одной полосы в разделе с предметом)
+    -CatalogTopicCard.css
+```

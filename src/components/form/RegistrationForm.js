@@ -2,24 +2,65 @@ import "./RegistrationForm.css"; /* Подключение стилей форм
 import { useState } from "react"; /* Подключим useState для выбора аватара */
 import avatarImage from "../../avatarImage.json"; /* Подключим файл с аватарами */
 import Logo from "../logoSite/Logo";
+import { supabase } from "../../supabaseClient";
 
 /* создание функционально компонента RegistrationForm, в которрый передаем пропсы
 isRegistrationFormOpen - это пропс, который определяет, открыта ли форма регистрации
 onClose - это функция, которая закрывает форму регистрации
 */
-function RegistrationForm({ isRegistrationFormOpen, onClose, }) {
+function RegistrationForm({ isRegistrationFormOpen, onClose, onRegistered }) {
   const [selectAvatar, setSelectAvatar] = useState(null); //создание переменной и функции выбора аватара. Сначала
   // состояние null
   const [avatarList, setAvatarList] = useState(false); //создание переменной с списком аватаром и функции
   //для открытия списка аватаров
+  const [error, setError] = useState("");
   /* условие, если форма не открыта, то не возвращаем ноль, то есть ничего */
   if (!isRegistrationFormOpen) {
     return null;
   }
   /* Напишем функцию, которая будет предотвращать отправку формы 
-  при перезагрузке страницы */
-  const handleSubmit = (event) => {
+    при перезагрузке страницы */
+  const handleSubmit = async (event) => {
     event.preventDefault();
+    setError("");
+    const form = event.currentTarget;
+    const name = form.name.value.trim();
+    const classNumber = form["class-number"].value;
+    const email = form.email.value.trim();
+    const password = form.password.value;
+    const confirmPassword = form.confirmPassword.value;
+
+    if (password !== confirmPassword) {
+      setError("Пароли не совпадают");
+      return;
+    }
+
+    if (!supabase) {
+      setError("Нет ключей Supabase. Добавьте .env.local и перезапустите npm start");
+      return;
+    }
+
+    const { error: signUpError } = await supabase.auth.signUp({
+      email,
+      password,
+      options: {
+        data: {
+          name,
+          class_name: classNumber,
+          avatar: selectAvatar,
+        },
+      },
+    });
+
+    if (signUpError) {
+      setError(signUpError.message);
+      return;
+    }
+
+    onClose();
+    if (onRegistered) {
+      onRegistered();
+    }
   };
 
   /* Зададим переменную поиска нужной аватарки методом find() */
@@ -100,6 +141,7 @@ function RegistrationForm({ isRegistrationFormOpen, onClose, }) {
             )}
           </div>
           <input type="hidden" name="avatar" value={selectAvatar || ""} />
+          {error ? <p className="form-error">{error}</p> : null}
           <button type="submit">Зарегистрироваться</button>
         </div>
       </form>

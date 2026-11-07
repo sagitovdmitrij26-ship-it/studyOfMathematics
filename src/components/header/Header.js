@@ -2,6 +2,7 @@ import { useState } from "react";
 import Entrance from "../../homePage/entrance/entrance";
 import Logo from "../logoSite/Logo";
 import "./Header.css";
+import {Link} from "react-router-dom";
 
 function Header({ onForm, onSignUp }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,9 +23,9 @@ function Header({ onForm, onSignUp }) {
           </Entrance>
           <nav>
             <ul>
-              <li>Главная</li>
+              <li><Link to="/">Главная</Link></li>
               <li>Курс</li>
-              <li>Темы</li>
+              <li><Link to="/CatalogTopics">Темы</Link></li>
               <li>Об авторе</li>
               <li>Отзывы</li>
               <li>Цены</li>

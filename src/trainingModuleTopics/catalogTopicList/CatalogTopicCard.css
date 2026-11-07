@@ -1,0 +1,33 @@
+.catalog-topic-card {
+    display: flex;
+    align-items: center;
+    border: 6px groove #4eb5f1;
+    box-shadow: 0 0 20px 0 rgba(20, 2, 121, 0.5);
+    border-radius: 25px;
+    margin-bottom: 40px;
+}
+
+.card-explanation {
+    margin: auto 50px;
+}
+
+.catalog-topic-card .card-explanation h3 {
+    color: rgba(19, 26, 61, 1);
+    font-family: "Manrope";
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 23px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
+.card-explanation p {
+    color: rgba(140, 147, 174, 1);
+    font-family: "Manrope";
+    font-style: Regular;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 0px;
+    text-align: left;
+}
