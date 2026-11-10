@@ -6,6 +6,8 @@ import './CatalogTopics.css';
 function CatalogTopics({ catalogTopicLists }) {
     /* напишем хук для выбора класса useState */
     const [activeClass, setActiveClass] = useState(null) /* значение по умолчанию null без "" чтобы отработал код в CatalogTopicList (запасной текст) */
+    /* НАпишем хук для выбора уровня сложности */
+    const [ isDifficultyLevel, setIsDifficultyLevel ] = useState(null)
     return (
         <div className="wrap"> {/* внутренняя обертка */}
             <div className="wrapper"> {/* внутренняя обертка 2*/}
@@ -29,13 +31,15 @@ function CatalogTopics({ catalogTopicLists }) {
                         </div>
                         <div className='difficuktyLevel'> {/* блок с выбором уровня сложности */}
                             <p>Выберите уровень сложности:</p>
-                            <button>Базовый</button>
-                            <button>Средний</button>
-                            <button>Высокий</button>
+                            <button onClick ={ () => setIsDifficultyLevel("Базовый") }>Базовый</button> {/* укажем что при нажатии на кнопку будет срабатывать функция setIsDifficultyLevel */}
+                            <button onClick ={ () => setIsDifficultyLevel("Средний") }>Средний</button> {/* укажем что при нажатии на кнопку будет срабатывать функция setIsDifficultyLevel */}
+                            <button onClick ={ () => setIsDifficultyLevel("Высокий") }>Высокий</button> {/* укажем что при нажатии на кнопку будет срабатывать функция setIsDifficultyLevel */}
+                            
                         </div>
                         <CatalogTopicList
                             catalogTopicLists={catalogTopicLists}
                             activeClass={activeClass}
+                            isDifficultyLevel={isDifficultyLevel}
                         />
                     </div>
                 </div>

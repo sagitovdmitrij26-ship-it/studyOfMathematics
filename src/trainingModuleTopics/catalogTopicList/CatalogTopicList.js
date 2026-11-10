@@ -1,7 +1,7 @@
 import CatalogTopicCard from "./CatalogTopicCard";
 import "./CatalogTopicList.css";
 
-function CatalogTopicList({ catalogTopicLists = [], activeClass }) {
+function CatalogTopicList({ catalogTopicLists = [], activeClass, isDifficultyLevel }) {
     return (
         <div className="wrap">
             <div className="wrapper">
@@ -13,6 +13,7 @@ function CatalogTopicList({ catalogTopicLists = [], activeClass }) {
                                 key={catalogTopicList.id}
                                 catalogTopicList={catalogTopicList}
                                 activeClass={activeClass}
+                                isDifficultyLevel={isDifficultyLevel}
                             />)
                         ) : (
                             <h3>No catalog topic lists found</h3>

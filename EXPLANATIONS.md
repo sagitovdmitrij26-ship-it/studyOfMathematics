@@ -60,3 +60,7 @@
     -CatalogTopicCard.js (компонент одной полосы в разделе с предметом)
     -CatalogTopicCard.css
 ```
+### папка taskPages (папка с компонентами с задачами на страницу)
+1. Arithmetic (Арифметика папка для задач  по теме)
+    -Arithmetic.js (Компонент с задачами и загрузки списка из БД supabase)
+    -Arithmetic.css

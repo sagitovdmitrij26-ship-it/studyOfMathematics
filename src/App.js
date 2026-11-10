@@ -20,12 +20,15 @@ import Footer from "./components/footer/Footer";
 import RegistrationForm from "./components/form/RegistrationForm";
 /* Импортируем компонент LoginForm */
 import LoginForm from "./components/form/loginForm";
+/* Импортируем компонент Arithmetic */
+import Arithmetic from "./taskPages/arithmetic/Arithmetic";
 import topics from "./topic.json";
 import reviews from "./review.json";
 /* импорт компонента с каталогом тем */
 import CatalogTopics from "./trainingModuleTopics/catalogTopics/CatalogTopics";
 
 import "./App.css";
+
 
 function App() {
   const [activeNotification, setActiveNotification] = useState(null);
@@ -89,6 +92,14 @@ function App() {
           element={
             <>
               <CatalogTopics catalogTopicLists={topics.catalogTopicLists} />
+            </>
+          }
+        />
+        <Route
+          path="/Arithmetic"
+          element={
+            <>
+              < Arithmetic />
             </>
           }
         />

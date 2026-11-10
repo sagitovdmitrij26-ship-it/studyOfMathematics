@@ -1,14 +1,33 @@
 .catalog-topic-card {
-    display: flex;
+    display: grid;
+    grid-template-columns: 70px minmax(0, 1fr) 180px 170px;
     align-items: center;
+    column-gap: 24px;
+    padding: 16px 24px;
+    box-sizing: border-box;
     border: 6px groove #4eb5f1;
     box-shadow: 0 0 20px 0 rgba(20, 2, 121, 0.5);
     border-radius: 25px;
     margin-bottom: 40px;
 }
 
+.catalog-topic-card img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+
 .card-explanation {
-    margin: auto 50px;
+    margin: 0;
+    min-width: 0;
+}
+
+.progress-bar {
+    justify-self: start;
+}
+
+.progress-bar span {
+    white-space: nowrap;
 }
 
 .catalog-topic-card .card-explanation h3 {
@@ -30,4 +49,42 @@
     line-height: 150%;
     letter-spacing: 0px;
     text-align: left;
+}
+
+.catalog-topic-card button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    justify-self: end;
+    width: 100%;
+    height: 40px;
+    gap: 6px;
+    padding: 0px 14px 0px 14px;
+    border-radius: 12px;
+    background: rgba(247, 248, 252, 1);
+    color: rgba(59, 76, 224, 1);
+    font-family: "Manrope";
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 19px;
+    letter-spacing: 0px;
+    white-space: nowrap;
+    cursor: pointer;
+    border: 2px seashell rgb(5, 49, 245);
+    box-shadow:
+        0 4px 0 rgba(59, 76, 224, 0.25),
+        0 8px 16px rgba(19, 26, 61, 0.12);
+}
+
+.catalog-topic-card button:active {
+    transform: translateY(3px);
+    box-shadow:
+        0 1px 0 rgba(59, 76, 224, 0.25),
+        0 2px 6px rgba(19, 26, 61, 0.1);
+}
+.card-explanation__title {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
