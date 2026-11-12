@@ -27,7 +27,26 @@ function CatalogTopicCard({ catalogTopicList, activeClass, isDifficultyLevel }) 
             <div className='progress-bar'>
                 <span>{activeClass || "Выберите класс"}</span>
             </div>
-            <button type="button" onClick={() => navigate("/Arithmetic")}>Открыть раздел</button>
+            <button
+                type="button"
+                onClick={() => {
+                    /* activeClass и isDifficultyLevel приходят пропсами из CatalogTopics (кнопки «5–6 класс», «Базовый») */
+                    /* Если ученик не выбрал класс или уровень, на страницу задач не переходим: нечего подставлять в фильтр */
+                    if (!activeClass || !isDifficultyLevel) {
+                        return; /* return в onClick = просто ничего не делать, страница каталога остаётся */
+                    }
+                    /* navigate открывает другой маршрут. Объект удобнее строки: отдельно путь и хвост после ? */
+                    /* pathname — тот же path, что в App.js у Route: /Arithmetic */
+                    /* search — query-строка. Знак ? обязателен. Имена class и level потом читает Arithmetic */
+                    /* encodeURIComponent — пробел и тире в «5–6 класс» кодируются, иначе ссылка ломается */
+                    navigate({
+                        pathname: "/Arithmetic",
+                        search: `?class=${encodeURIComponent(activeClass)}&level=${encodeURIComponent(isDifficultyLevel)}`,
+                    });
+                }}
+            >
+                Открыть раздел
+            </button>
         </div>
 
     )

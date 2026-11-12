@@ -1,1 +1,38 @@
+.answer-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 30px 0;
+}
 
+.answer-buttons input {
+    width: 15%;
+    height: 30px;
+
+    box-shadow: 0 0 20px 0 rgba(3, 84, 160, 0.5);
+}
+
+.answer-buttons button {
+    width: 15%;
+    height: 30px;
+    border: 3px inset #7f5cfa;
+    border-radius: 15px;
+    box-shadow: 0 0 20px 0 rgba(3, 84, 160, 0.5);
+    background-color: #0f01d4;
+    color: rgb(240, 240, 243);
+    font-family: "Manrope";
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 0px;
+}
+
+.current-task p {
+    color: rgba(90, 97, 131, 1);
+    font-family: "Manrope";    
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 165%;
+    letter-spacing: 0px;
+    
+}
