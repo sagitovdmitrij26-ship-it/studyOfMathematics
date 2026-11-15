@@ -2,6 +2,9 @@ import "./Arithmetic.css";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom"; /* хук React Router: читает хвост ссылки после ? */
 import { supabase } from "../../supabaseClient";
+import ResultTopic from "./ResultTopic";
+/* импортируем массив с темами topics чтобы передать в ResultTopic */
+import  topics  from "../../topic.json";
 
 function Arithmetic() {
     /* ============================хуки для сайта==================================================================*/
@@ -27,7 +30,7 @@ function Arithmetic() {
     const [listAnswers, setListAnswers] = useState([]);
     /* Напишем еще одно состояние для перехода на страницу ResultTopic после решения всех задач */
     const [showResult, setShowResult] = useState(false);
-   
+
 
     /* useEffect — «сделай это после отрисовки». Запрос к базе нельзя писать прямо в теле функции: она должна быстро вернуть JSX */
     useEffect(() => {
@@ -59,7 +62,7 @@ function Arithmetic() {
             }
 
             /* order в конце цепочки: сортировка уже отфильтрованного набора по id */
-            const { data, error } = await query.order("id");
+            const { data, error } = await query.order("id").limit(5);
 
             /* error будет, если нет таблицы, нет колонки или RLS не даёт SELECT */
             /* return — не вызываем setTasks, чтобы не затереть состояние битым ответом */
@@ -85,11 +88,11 @@ function Arithmetic() {
         /* Второй аргумент useEffect — зависимости. Раньше был []: загрузить один раз при входе на страницу */
         /* Теперь в массиве selectedClass и selectedLevel: если в ссылке сменились класс или уровень, эффект запустится снова */
         /* Сами setTasks сюда не ставим — иначе после каждого ответа базы эффект крутился бы бесконечно */
-    }, [selectedClass, selectedLevel]);    
- /* ============================================================================================================================*/
+    }, [selectedClass, selectedLevel]);
+    /* ============================================================================================================================*/
     /* tasks — массив, у него нет поля id. id есть у одной строки: tasks[0], tasks[1]... */
     const task = tasks[currentIndex];
-/* =======================================функция проверки введенного ответа============================================= */
+    /* =======================================функция проверки введенного ответа============================================= */
     /* Функция проверки введенного ответа. */
     function checkAnswer() {
         /* Сначала проверяем, ввёл ли ученик текст. Это поле answer из useState, не колонка таблицы */
@@ -101,8 +104,8 @@ function Arithmetic() {
         const correct = String(task.answer ?? "").trim();
 
         if (user === correct) {
-            setResult("Правильно!");        
-            
+            setResult("Правильно!");
+
         } else {
             setResult("Неправильно!");
         }
@@ -119,47 +122,68 @@ function Arithmetic() {
             }
         ])
         /* Не выходим за последнюю задачу */
-            if (currentIndex < tasks.length - 1) {
-                setCurrentIndex(currentIndex + 1);
-                setResult("");
-            } else{
-                setShowResult(true);
-            }
+        if (currentIndex < tasks.length - 1) {
+            setCurrentIndex(currentIndex + 1);
+            setResult("");
+        } else {
+            setShowResult(true);
+        }
     }
-/* =======================================функция проверки введенного ответа============================================= */
+
+    /* создадим переменную которая будет содержать текущую тему */
+    let catalogTopicList; /* создали переменную снаружи от if чтобы она
+    была доступна в любом месте функции */
+    if (topics.catalogTopicLists[0].title === "Арифметика") {
+        catalogTopicList = topics.catalogTopicLists[0];
+    }
+
+
+        /* =======================================функция проверки введенного ответа============================================= */
+    /* Итог возвращаем отдельно: иначе он остаётся внутри .wrapper и фон снова сужается до 1280px */
+    if (showResult) {
+        return (
+            <ResultTopic
+                listAnswers={listAnswers}
+                catalogTopicList={catalogTopicList}
+                selectedClass={selectedClass}
+                selectedLevel={selectedLevel}
+            />
+        );
+    }
+
     return (
-        <div className="wrap">
+        < div className="wrap" >
             <div className="wrapper">
                 {
-                    /* Пока tasks пустой (загрузка или нет строк), task равен undefined — рисуем заглушку */
-                    task ? (
-                        <div className="current-task">
-                            {/* Здесь task.id — номер строки из таблицы, не индекс массива */}
-                            <h2>Задача №{task.id}</h2>
-                            <p>{task.question}</p>
-                            <div className="answer-buttons">
-                                <input
-                                    type="text"
-                                    placeholder="Введите ответ"
-                                    value={answer}
-                                    onChange={(e) => setAnswer(e.target.value)}
-                                />
-                                <button
-                                    type="button"
-                                    onClick={checkAnswer}
-                                >
-                                    Проверить ответ
-                                </button>
+                        /* Пока tasks пустой (загрузка или нет строк), task равен undefined — рисуем заглушку */
+                        task ? (
+                            <div className="current-task">
+                                {/* Здесь task.id — номер строки из таблицы, не индекс массива */}
+                                <h2>Задача №{task.id}</h2>
+                                <p>{task.question}</p>
+                                <div className="answer-buttons">
+                                    <input
+                                        type="text"
+                                        placeholder="Введите ответ"
+                                        value={answer}
+                                        onChange={(e) => setAnswer(e.target.value)}
+                                    />
+                                    <button
+                                        type="button"
+                                        onClick={checkAnswer}
+                                    >
+                                        Проверить ответ
+                                    </button>
+                                </div>
+                                {task.image ? <img src={task.image} alt="" /> : null}
+                                {result ? <h3>{result}</h3> : null}
                             </div>
-                            {task.image ? <img src={task.image} alt="" /> : null}
-                            {result ? <h3>{result}</h3> : null}
-                        </div>
-                    ) : (
-                        <h3>Задачи пока не загрузились</h3>
-                    )
+                        ) : (
+                            <h3>Задачи пока не загрузились</h3>
+                        )
                 }
             </div>
-        </div>
+        </div >
     );
 }
 
