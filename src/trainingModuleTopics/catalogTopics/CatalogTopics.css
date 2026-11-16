@@ -87,7 +87,7 @@
     flex-wrap: nowrap;
     align-items: center;
     gap: 10px;
-    margin: 16px 0 0;
+    margin: 16px 0 16px 0;
 }
 
 .difficuktyLevel button {

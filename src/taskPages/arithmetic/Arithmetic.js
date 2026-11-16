@@ -2,7 +2,7 @@ import "./Arithmetic.css";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom"; /* хук React Router: читает хвост ссылки после ? */
 import { supabase } from "../../supabaseClient";
-import ResultTopic from "./ResultTopic";
+import ResultTopic from "../resultTopic/ResultTopic";
 /* импортируем массив с темами topics чтобы передать в ResultTopic */
 import  topics  from "../../topic.json";
 
@@ -117,8 +117,9 @@ function Arithmetic() {
                 userAnswer: user,
                 correctAnswer: correct,
                 isCorrect: user === correct,
-                explanation: task.explanation,
+                explanation: task.explanation_of_the_answer,
                 image: task.image,
+                id: task.id
             }
         ])
         /* Не выходим за последнюю задачу */
@@ -147,6 +148,13 @@ function Arithmetic() {
                 catalogTopicList={catalogTopicList}
                 selectedClass={selectedClass}
                 selectedLevel={selectedLevel}
+                onRepeat={() => {
+                    setShowResult(false);
+                    setCurrentIndex(0);
+                    setListAnswers([]);
+                    setAnswer("");
+                    setResult("");
+                }}
             />
         );
     }
@@ -158,8 +166,8 @@ function Arithmetic() {
                         /* Пока tasks пустой (загрузка или нет строк), task равен undefined — рисуем заглушку */
                         task ? (
                             <div className="current-task">
-                                {/* Здесь task.id — номер строки из таблицы, не индекс массива */}
-                                <h2>Задача №{task.id}</h2>
+                                {/* Номер в сессии: 1, 2, 3… не id строки в Supabase */}
+                                <h2>Задача №{currentIndex + 1}</h2>
                                 <p>{task.question}</p>
                                 <div className="answer-buttons">
                                     <input
