@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Матеум — макет блока «Отзывы»</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Manrope, Segoe UI, Arial, sans-serif; background: #eef1f8; color: #131a3d; }
+    .page { width: 1440px; margin: 24px auto; background: #fff; }
+    .note { background: #fff6d6; color: #4a3a08; padding: 10px 16px; font-size: 13px; text-align: center; }
+    .band {
+      background: linear-gradient(180deg, #f4f6fd 0%, #ffffff 48%);
+      padding: 72px 80px 80px;
+    }
+    .label {
+      margin: 0 0 10px;
+      color: #3b4ce0;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+    }
+    h2 { margin: 0 0 10px; font-size: 38px; font-weight: 800; letter-spacing: -0.6px; }
+    .lead { margin: 0 0 28px; max-width: 560px; color: #5a6183; font-size: 16px; line-height: 160%; }
+    .chips { display: flex; gap: 12px; margin-bottom: 36px; }
+    .chip {
+      display: flex; flex-direction: column; gap: 2px;
+      min-width: 150px; padding: 12px 16px; background: #fff;
+      border: 1px solid #e3e7f5; border-radius: 16px;
+    }
+    .chip b { font-size: 22px; font-weight: 800; }
+    .chip span { color: #5a6183; font-size: 13px; }
+    .row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+    .card {
+      display: flex; flex-direction: column;
+      min-height: 280px; padding: 22px 22px 20px;
+      background: #fff; border: 2px solid #4eb5f1; border-radius: 22px;
+      box-shadow: 0 8px 24px rgba(19, 26, 61, 0.08);
+    }
+    .stars { color: #f0b429; letter-spacing: 2px; font-size: 16px; margin-bottom: 12px; }
+    .card p { margin: 0; flex: 1; color: #2b3159; font-size: 16px; line-height: 160%; text-align: left; }
+    .user { display: flex; align-items: center; gap: 12px; margin-top: 22px; }
+    .ava {
+      width: 52px; height: 52px; border-radius: 50%;
+      display: grid; place-items: center; color: #fff; font-weight: 800;
+      background: #0f01d4;
+    }
+    .ava.a2 { background: #3b4ce0; }
+    .ava.a3 { background: #4eb5f1; color: #131a3d; }
+    .user h3 { margin: 0; font-size: 15px; }
+    .user span { color: #8c93ae; font-size: 13px; }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-top: 28px;
+    }
+    .dots { display: flex; gap: 8px; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: #c9d0ea; }
+    .dot.on { width: 22px; border-radius: 8px; background: #0f01d4; }
+    .btns { display: flex; gap: 10px; }
+    .btn {
+      width: 44px; height: 44px; border-radius: 50%;
+      border: 2px solid #c5c8f0; background: #fff; color: #0f01d4;
+      font-size: 18px; font-weight: 700;
+    }
+    .btn.fill { background: #0f01d4; color: #fff; border-color: #0f01d4; }
+  </style>
+</head>
+<body>
+  <div class="note">Макет 1440px для Pixso: откройте в Chrome на 100% → снимок → File → Import</div>
+  <div class="page">
+    <section class="band">
+      <p class="label">ОТЗЫВЫ</p>
+      <h2>Ученики и родители о тренажёре</h2>
+      <p class="lead">Собрали отзывы за последний учебный год. Короткие истории про практику, разборы и оценки.</p>
+      <div class="chips">
+        <div class="chip"><b>4.8</b><span>средний балл</span></div>
+        <div class="chip"><b>5</b><span>отзывов в блоке</span></div>
+        <div class="chip"><b>5–9</b><span>классы учеников</span></div>
+      </div>
+      <div class="row">
+        <article class="card">
+          <div class="stars">★★★★★</div>
+          <p>«Раньше я просто списывала ответы. Здесь видно, где ошибка в решении — за месяц вытянула алгебру с тройки на четвёрку».</p>
+          <div class="user"><div class="ava">А</div><div><h3>Анна Петрова</h3><span>6 класс</span></div></div>
+        </article>
+        <article class="card">
+          <div class="stars">★★★★★</div>
+          <p>«Сын сам садится за задачи: короткие серии и счётчик дней работают лучше любых уговоров».</p>
+          <div class="user"><div class="ava a2">М</div><div><h3>Марина Ковалёва</h3><span>мама ученика 7 класса</span></div></div>
+        </article>
+        <article class="card">
+          <div class="stars">★★★★☆</div>
+          <p>«Разборы шаг за шагом — то, чего не хватало в учебнике. Теперь готовлюсь к контрольным работам».</p>
+          <div class="user"><div class="ava a3">И</div><div><h3>Игорь Смирнов</h3><span>8 класс</span></div></div>
+        </article>
+      </div>
+      <div class="nav">
+        <div class="dots"><span class="dot on"></span><span class="dot"></span><span class="dot"></span></div>
+        <div class="btns"><button class="btn" type="button">←</button><button class="btn fill" type="button">→</button></div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

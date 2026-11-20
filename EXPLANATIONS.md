@@ -70,7 +70,15 @@
 2.  algebra  (папка для компонента с показом темы алгебра)
     -algebra.js
     -algebra.css
+3. geometry (папка для темы геометрия)
+    -Geometry.js
+    -Geometry.css
 
     
 5. resultTopic (папка для компонента, где будет показываться результтат по решению задач)
     -ResultTopic.css (стили для вывода результатов)
+6. useTasks.js файл для храннения импортов с базы данных, функций и хуков, общие для всех тем.
+
+### папка courseEducational (папка для раздела описания курса из шапки)
+    -CourseEducational.js
+    -CourseEducational.css

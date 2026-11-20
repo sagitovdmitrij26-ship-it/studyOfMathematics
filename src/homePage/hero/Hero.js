@@ -1,6 +1,6 @@
 import "./Hero.css";
 
-function Hero({ onStart }) {
+function Hero({ onStart, badgeText }) {
   return (
     <div className="wrap">
       {" "}
@@ -15,7 +15,7 @@ function Hero({ onStart }) {
             {" "}
             {/* Контейнер для пояснения назначения сайта */}
             <span></span>
-            <h4>Онлайн-тренажёр для 5-8 классов</h4>
+            <h4>{badgeText}</h4>
           </div>
           <h1>Математика, которая наконец становится понятной</h1>
           <div className="heroSub">

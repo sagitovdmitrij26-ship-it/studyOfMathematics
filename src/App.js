@@ -22,10 +22,18 @@ import RegistrationForm from "./components/form/RegistrationForm";
 import LoginForm from "./components/form/loginForm";
 /* Импортируем компонент Arithmetic */
 import Arithmetic from "./taskPages/arithmetic/Arithmetic";
+/* Импортируем компонент Algebra */
+import Algebra from "./taskPages/algebra/Algebra";
+/* Импортируем компонент Geometry */
+import Geometry from "./taskPages/geometry/Geometry";
+/* Импортируем компонент Functions */
+import Functions from "./taskPages/functions/Functions";
 import topics from "./topic.json";
 import reviews from "./review.json";
 /* импорт компонента с каталогом тем */
 import CatalogTopics from "./trainingModuleTopics/catalogTopics/CatalogTopics";
+/* импорт компонента с описанием курса */
+import CourseEducational from "./courseEducational/CourseEducational";
 
 import "./App.css";
 
@@ -59,27 +67,30 @@ function App() {
   return (
     <div className="App">
       {/* При клике на "Войти" показываем уведомление о необходимости регистрации */}
+      {/* ===================================отрисовка компонента шгапки======================================================================= */}
       <Header
         onForm={() => setIsLoginFormOpen(true)}
         onSignUp={() => setIsRegistrationFormOpen(true)}
       />
+      <RegistrationForm
+        isRegistrationFormOpen={isRegistrationFormOpen}
+        onClose={() => setIsRegistrationFormOpen(false)}
+      />
+      <LoginForm
+        isLoginFormOpen={isLoginFormOpen}
+        onClose={() => setIsLoginFormOpen(false)}
+      />
+      {/* ==================================================================================================================================== */}
+      {/* ================================= */}
       <Routes> {/* оборачиваем все, кроме шапки и подвала, чтобы они всегда были на странице */}
         <Route
           path="/"
           element={
             <>
               {/* При клике на «Начать бесплатно» показываем первое уведомление (success) */}
-              <Hero onStart={() => showNotification(2)} />
+              <Hero onStart={() => showNotification(2)} badgeText="Онлайн-тренажёр для 5-9 классов" />
               {activeNotification && <Notification variant={activeNotification} />}
               <TopicsSection topics={topics.topics} />  {/* Блок с темами подключаем */}
-              <RegistrationForm
-                isRegistrationFormOpen={isRegistrationFormOpen}
-                onClose={() => setIsRegistrationFormOpen(false)}
-              />
-              <LoginForm
-                isLoginFormOpen={isLoginFormOpen}
-                onClose={() => setIsLoginFormOpen(false)}
-              />
               <Advantages advantages={topics.advantages} /> {/*Подключаем блок с преимуществами  */}
               <LeaningPath paths={topics.paths} /> {/* Подключаем блок с путем обучения */}
               <ReviewsSection reviews={reviews.reviews} />
@@ -87,6 +98,16 @@ function App() {
             </>
           }
         />
+        {/* ===================================отрисовка компонента описания курса======================================================================= */}
+        <Route
+          path="/CourseEducational"
+          element={
+            <>
+              <CourseEducational badgeText="Онлайн-тренажёр для 5–9 классов" />
+            </>
+          }
+        />
+        {/* ===================================отрисовка компонента каталога тем======================================================================= */}
         <Route
           path="/catalogTopics"
           element={
@@ -103,6 +124,32 @@ function App() {
             </>
           }
         />
+        <Route
+          path="/Algebra"
+          element={
+            <>
+              < Algebra />
+            </>
+          }
+        />
+        <Route
+          path="/Geometry"
+          element={
+            <>
+              < Geometry />
+            </>
+          }
+        />
+        <Route
+          path="/Functions"
+          element={
+            <>
+              < Functions />
+            </>
+          }
+        />
+        {/* ===================================================================================================================================== */}
+
       </Routes>
       <Footer />
     </div>

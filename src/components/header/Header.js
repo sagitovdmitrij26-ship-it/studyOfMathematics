@@ -24,9 +24,8 @@ function Header({ onForm, onSignUp }) {
           <nav>
             <ul>
               <li><Link to="/">Главная</Link></li>
-              <li>Курс</li>
-              <li><Link to="/CatalogTopics">Темы</Link></li>
-              <li>Об авторе</li>
+              <li><Link to="/CourseEducational">Курс</Link></li>
+              <li><Link to="/CatalogTopics">Темы</Link></li>              
               <li>Отзывы</li>
               <li>Цены</li>
             </ul>

@@ -1,23 +1,13 @@
 import "./Arithmetic.css";
-import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom"; /* хук React Router: читает хвост ссылки после ? */
-import { supabase } from "../../supabaseClient";
+import { useState } from "react";
 import ResultTopic from "../resultTopic/ResultTopic";
+import useTasks from "../useTasks";
 /* импортируем массив с темами topics чтобы передать в ResultTopic */
 import  topics  from "../../topic.json";
 
 function Arithmetic() {
-    /* ============================хуки для сайта==================================================================*/
-    /* Пример ссылки: /Arithmetic?class=5–6 класс&level=Базовый — её собрал CatalogTopicCard при клике «Открыть раздел» */
-    /* useSearchParams возвращает объект с методами get/set. Нам нужен только get — читать, не менять */
-    const [searchParams] = useSearchParams();
-    /* get("class") берёт значение параметра class. Имя должно совпасть с тем, что в search у navigate */
-    /* Если открыли /Arithmetic без хвоста, get вернёт null — тогда фильтр по классу/уровню ниже не применится */
-    const selectedClass = searchParams.get("class");
-    const selectedLevel = searchParams.get("level");
-    /* tasks — массив задач, который увидит JSX. Сначала он пустой, страница рисуется без списка */
-    /* setTasks — функция, которой мы потом положим ответ из базы; после этого React перерисует компонент */
-    const [tasks, setTasks] = useState([]);
+    /* useTasks — загрузка задач из Supabase. Хуки вызываются только внутри компонента */
+    const { tasks, selectedClass, selectedLevel } = useTasks("arithmetic");
     /* Для проверки введенного пользователем ответа напишем useState */
     const [answer, setAnswer] = useState("");
     /* напишем еще useState для результата проверки */
@@ -31,65 +21,6 @@ function Arithmetic() {
     /* Напишем еще одно состояние для перехода на страницу ResultTopic после решения всех задач */
     const [showResult, setShowResult] = useState(false);
 
-
-    /* useEffect — «сделай это после отрисовки». Запрос к базе нельзя писать прямо в теле функции: она должна быстро вернуть JSX */
-    useEffect(() => {
-        /* async — помечает функцию: внутри можно ждать сервер через await, не блокируя весь сайт */
-        const fetchTasks = async () => {
-            /* supabase берётся из supabaseClient.js. Если нет URL/ключа в .env.local, там null */
-            /* return — выходим из функции, запрос не отправляем, иначе будет ошибка */
-            if (!supabase) {
-                return;
-            }
-
-            /* await — ждём ответ. Без него data ещё не будет готова */
-            /* { data, error } — из ответа сразу достаём два поля: массив строк и ошибку */
-            /* query собираем по шагам: сначала предмет, потом при необходимости класс и уровень */
-            /* let, не const — ниже к цепочке дописываем .eq, переменную нужно перезаписать */
-            let query = supabase
-                .from("arithmetic_tasks") /* новая таблица с теми же колонками, что у tasks */
-                .select("*") /* какие колонки взять; * = все колонки строки */
-                .eq("subject", "arithmetic"); /* фильтр: только строки, где subject равен arithmetic */
-
-            /* .eq(колонка, значение) = «оставь строки, где колонка точно равна значению» */
-            /* Имена колонок class_name и level — как в Table Editor, не как в каталоге (там пропсы activeClass / isDifficultyLevel) */
-            /* Текст значения должен совпасть с кнопкой: «5–6 класс», «Базовый». «базовый» или «5-6» не подойдут */
-            if (selectedClass) {
-                query = query.eq("class_name", selectedClass);
-            }
-            if (selectedLevel) {
-                query = query.eq("level", selectedLevel);
-            }
-
-            /* order в конце цепочки: сортировка уже отфильтрованного набора по id */
-            const { data, error } = await query.order("id").limit(5);
-
-            /* error будет, если нет таблицы, нет колонки или RLS не даёт SELECT */
-            /* return — не вызываем setTasks, чтобы не затереть состояние битым ответом */
-            if (error) {
-                console.log(error); /* смотрите сообщение в консоли браузера (F12) */
-                return;
-            }
-
-            /* data — уже массив задач с сервера */
-            /* ?? [] — если data вдруг null, кладём пустой массив, чтобы потом можно было писать tasks.map */
-            /* setTasks запоминает массив и заставляет React нарисовать страницу заново уже с задачами */
-            setTasks(data ?? []);
-            /* Новый набор задач (другой класс/уровень) — начинаем с первой, иначе currentIndex может указать мимо массива */
-            setCurrentIndex(0);
-            setAnswer(""); /* поле ответа от прошлой задачи не должно остаться */
-            setResult(""); /* «Правильно!» / «Неправильно!» тоже сбрасываем */
-            setShowResult(false); /* состояние для перехода на страницу ResultTopic после решения всех задач */
-            setListAnswers([]); /* очищаем массив ответов для нового набора задач */
-        };
-
-        /* Объявить fetchTasks мало: React сам её не запустит. Вызов отправляет запрос */
-        fetchTasks();
-        /* Второй аргумент useEffect — зависимости. Раньше был []: загрузить один раз при входе на страницу */
-        /* Теперь в массиве selectedClass и selectedLevel: если в ссылке сменились класс или уровень, эффект запустится снова */
-        /* Сами setTasks сюда не ставим — иначе после каждого ответа базы эффект крутился бы бесконечно */
-    }, [selectedClass, selectedLevel]);
-    /* ============================================================================================================================*/
     /* tasks — массив, у него нет поля id. id есть у одной строки: tasks[0], tasks[1]... */
     const task = tasks[currentIndex];
     /* =======================================функция проверки введенного ответа============================================= */
@@ -130,7 +61,6 @@ function Arithmetic() {
             setShowResult(true);
         }
     }
-
     /* создадим переменную которая будет содержать текущую тему */
     let catalogTopicList; /* создали переменную снаружи от if чтобы она
     была доступна в любом месте функции */
@@ -196,4 +126,3 @@ function Arithmetic() {
 }
 
 export default Arithmetic;
-

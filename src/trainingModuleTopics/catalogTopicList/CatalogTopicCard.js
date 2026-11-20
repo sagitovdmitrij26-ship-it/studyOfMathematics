@@ -35,12 +35,17 @@ function CatalogTopicCard({ catalogTopicList, activeClass, isDifficultyLevel }) 
                     if (!activeClass || !isDifficultyLevel) {
                         return; /* return в onClick = просто ничего не делать, страница каталога остаётся */
                     }
-                    /* navigate открывает другой маршрут. Объект удобнее строки: отдельно путь и хвост после ? */
-                    /* pathname — тот же path, что в App.js у Route: /Arithmetic */
-                    /* search — query-строка. Знак ? обязателен. Имена class и level потом читает Arithmetic */
-                    /* encodeURIComponent — пробел и тире в «5–6 класс» кодируются, иначе ссылка ломается */
+                    /* pathname должен совпасть с path в App.js: карточка «Алгебра» открывает Algebra, не Arithmetic */
+                    let pathname = "/Arithmetic";
+                    if (title === "Алгебра") {
+                        pathname = "/Algebra";
+                    } else if (title === "Геометрия") {
+                        pathname = "/Geometry";
+                    } else if (title === "Функции") {
+                        pathname = "/Functions";
+                    }
                     navigate({
-                        pathname: "/Arithmetic",
+                        pathname,
                         search: `?class=${encodeURIComponent(activeClass)}&level=${encodeURIComponent(isDifficultyLevel)}`,
                     });
                 }}

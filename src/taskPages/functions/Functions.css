@@ -1,0 +1,78 @@
+.no-tasks {
+    max-width: 720px;
+    margin: 80px auto;
+    padding: 40px 48px;
+    box-sizing: border-box;
+    text-align: left;
+    border: 6px groove #4eb5f1;
+    box-shadow: 0 0 20px 0 rgba(20, 2, 121, 0.5);
+    border-radius: 25px;
+    background: #fff;
+}
+
+.no-tasks__badge {
+    display: inline-block;
+    margin-bottom: 16px;
+    padding: 8px 20px;
+    border-radius: 15px;
+    background: #e8eaf2;
+    color: rgba(19, 26, 61, 1);
+    font-family: "Manrope", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.no-tasks h1 {
+    margin: 0 0 12px;
+    color: rgba(19, 26, 61, 1);
+    font-family: "Manrope", sans-serif;
+    font-size: 34px;
+    font-weight: 800;
+    line-height: 46px;
+    letter-spacing: -0.8px;
+}
+
+.no-tasks p {
+    margin: 0;
+    color: rgba(90, 97, 131, 1);
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 160%;
+}
+
+.answer-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.answer-buttons input {
+    width: 15%;
+    height: 30px;
+    box-shadow: 0 0 20px 0 rgba(3, 84, 160, 0.5);
+}
+
+.answer-buttons button {
+    width: 15%;
+    height: 30px;
+    border: 3px inset #7f5cfa;
+    border-radius: 15px;
+    box-shadow: 0 0 20px 0 rgba(3, 84, 160, 0.5);
+    background-color: #0f01d4;
+    color: rgb(240, 240, 243);
+    font-family: "Manrope";
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 0px;
+}
+
+.task-figure {
+    display: block;
+    max-width: 1200px;
+    width: 100%;
+    height: auto;
+    margin: 16px auto 0;
+}

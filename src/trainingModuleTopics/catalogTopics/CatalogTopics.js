@@ -14,7 +14,7 @@ function CatalogTopics({ catalogTopicLists }) {
                 <div className='catalogMain'> {/* Общий блок для раздела с темами */}
                     <div className='catalogMain__title'> {/* Заголовок раздела */}
                         <h1>Каталог тем</h1>
-                        <p>12 разделов, 680 задач и 240 разборов. Выберите
+                        <p>4 раздела, 3430 задач и 3430 разборов. Выберите
                             тему — тренажёр подстроит сложность под ваш уровень.</p>
                         <div className='catalogMain_toolbar'> {/* Блок для панели инструментов */}
                             <div className='catalogMain_search'>
